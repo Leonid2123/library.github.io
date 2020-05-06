@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<title>VR у Бібліотеці</title>
+	<meta name="viewport" content="width-device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/animate.css">
+	<script src="js/wow.min.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $(".checkbox").click(function(){
+    $("#line1").toggleClass("lin1");
+    $("#line2").toggleClass("lin2");
+    $("#line3").toggleClass("lin3");
+    $(".secondnav").toggleClass("secretmenu");
+  });
+});
+jQuery(document).ready(function ($) {
+
+  $('#checkbox').change(function(){
+    setInterval(function () {
+        moveRight();
+    }, 3000);
+  });
+  
+	var slideCount = $('#slider ul li').length;
+	var slideWidth = $('#slider ul li').width();
+	var slideHeight = $('#slider ul li').height();
+	var sliderUlWidth = slideCount * slideWidth;
+	
+	$('#slider').css({ width: slideWidth, height: slideHeight });
+	
+	$('#slider ul').css({ width: sliderUlWidth, marginLeft: - slideWidth });
+	
+    $('#slider ul li:last-child').prependTo('#slider ul');
+
+    function moveLeft() {
+        $('#slider ul').animate({
+            left: + slideWidth
+        }, 100, function () {
+            $('#slider ul li:last-child').prependTo('#slider ul');
+            $('#slider ul').css('left', '');
+        });
+    };
+    function moveRight() {
+        $('#slider ul').animate({
+            left: - slideWidth
+        }, 100, function () {
+            $('#slider ul li:first-child').appendTo('#slider ul');
+            $('#slider ul').css('left', '');
+        });
+    };
+    $('a.control_prev').click(function () {
+        moveLeft();
+    });
+    $('a.control_next').click(function () {
+        moveRight();
+    });
+});    
+</script>
+	<script>
+new WOW().init();
+</script>
+</head>
+<body>
+	<div class="container">
+		<div class="row wow slideInDown animated header">
+			<div style="width: 100%;
+			height: 95%;display: flex;justify-content: space-between;align-items: center;">
+			<img class="column-6 logo lo0" src="img/logo.png">
+			<img class="column-6 logo lo1" src="img/logo2.png">
+			<img class="column-6 logo lo2" src="img/logo3.png">
+			
+			<div class="nav">
+				<a href="#">        <div class="navv">Головна</div></a>
+				<a href="#about">   <div class="navv">Проект</div></a>
+				<a href="#perewagy"><div class="navv">Переваги</div></a>
+				<a href="#programs"><div class="navv">Програми</div></a>
+				<a href="#galery">  <div class="navv">Галерея</div></a>
+				<a href="#partners"><div class="navv">Партнери</div></a>
+				<a href="#contacts"><div class="navv">Контакти</div></a>
+			</div>
+			<div class="nav secondnav">
+				<div class="menue"><a href="#">   <div class="navv">Головна</div></a>
+				<a href="#about">   <div class="navv">Проект</div></a>
+				<a href="#perewagy"><div class="navv">Переваги</div></a>
+				<a href="#programs"><div class="navv">Програми</div></a></div>
+				<div class="menue"><a href="#galery">  <div class="navv">Галерея</div></a>
+				<a href="#partners"><div class="navv">Партнери</div></a>
+				<a href="#contacts"><div class="navv">Контакти</div></a></div>
+			</div>
+			<div class="secret">
+					<div class="checkbox">
+						<div class="line" id="line1"></div>
+						<div class="line" id="line2"></div>
+						<div class="line" id="line3"></div>
+					</div>
+				</div></div>
+				<div class="progress-container wow slideInDown animated">
+    				<div class="progress-bar" id="myBar"></div>
+				</div> 
+		</div>
+		
+		<div class="row wow animated slideInRight content">
+			<div class="minicol mc1">
+				<div class="hh"><p class="h1"><b>Новий та сучасний спосіб навчання - Віртуальна реальність</b></p></div>
+				<iframe width="100%" height="322px;" src="https://www.youtube.com/embed/eAKGQq_jtlY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</div>
+			<div class="minicol mc2">
+				<div id="form" class="hh"><p style="font-size: 22pt;" class="h1"><b>VR У бібліотеці</p></b></div>
+				<div class="form-wrap">
+ 	 <div class="profile">
+ 	   <h1 class="h1" style="margin-bottom: 3px;">Регістрація</h1>
+	  </div>
+  <form method="post" action="form.php">
+    <div>
+      <label for="name">Ім`я</label>
+      <input type="text" name="name" required>
+    </div>
+    <div>
+      <label for="email">E-mail</label>
+      <input type="email" name="email" required>
+    </div>
+    <div> 
+    </div> 
+    <button type="submit">Відправити</button> 
+  </form> 
+</div>
+			</div>
+		</div>
+		<div id="about" class="row wow animated zoomIn article">
+			<div class="h3">ПРО ПРОЕКТ</div>
+			<div class="bigtext">Майбутнє освіти пов'язане як з онлайн-платформами, так і з віртуальною реальністю - це наступний крок у розвитку освітнього контенту. Ми пропонуємо читання книг що оживають, подорож у віртуальні тури країнами світу, вивчення англійської мови пірнаючи у підводний світ з допомогою гаджетів віртуальної реальності. Все це відбувається одночасно з інформаційною подачею наших бібліотекарів,
+			які цікаво та пізнавально доповнюють технологічні інновації живим спілкуванням та практичними навичками. Така подача матеріалу безсумнівно привертає увагу, викликає емоційну реакцію, та виховує у дітей цікавість до бібліотеки та читання.</div>
+			<div class="bigcols">
+				<div class="bigcol">
+					<img class="minilogo" src="img/m1.png">
+					<p class="bigcoltext"><b>Читання книг, що оживають</b></p>
+				</div>
+				<div class="bigcol">
+					<img class="minilogo bct2" src="img/m3.png">
+					<p class="bigcoltext"><b>Подорожі</b></p>
+				</div>
+				<div class="bigcol">
+					<img class="minilogo" src="img/m2.png">
+					<p class="bigcoltext"><b>Вивчення англійської мови</b></p>
+				</div>
+			</div>
+		</div>
+	<div class="content2">
+		<div class="row1_content wow animated slideInLeft">
+			<a href="#form"><div class="p_row1">ЗАПИШІТЬСЯ</div></a>
+			<div class="prop">на найближчий захід у бібліотеку</div>
+		</div>
+		<div id="perewagy" class="row2_content">
+			<div class="h3">ПЕРЕВАГИ</div>
+			<div class="row2_block">
+				<div class="block_content wow animated fadeInUp">
+					<div class="proz prozimg"><img class="marginsimg" src="img/i4.png"></div>
+					<div class="proz"><h3 class="h3_block_content">Безкоштовно</h3></div>
+					<div class="proz"><p class="p_block_content">Всі заходи проводяться на безоплатній основі</p></div>
+				</div>
+				<div class="block_content blc1 wow animated fadeInUp">
+					<div class="proz prozimg"><img class="marginsimg" src="img/i5.png"></div>
+					<div class="proz"><h3 class="h3_block_content">Вільний Wi-Fi</h3></div>
+					<div class="proz"><p class="p_block_content">Кожен користувач бібліотеки може користуватись доступом до мережі Інтернет</p></div>
+				</div>
+				<div class="block_content blc2 wow animated fadeInUp">
+					<div class="proz prozimg"><img class="marginsimg" src="img/i6.png"></div>
+					<div class="proz"><h3 class="h3_block_content">Дитяча кімната</h3></div>
+					<div class="proz"><p class="p_block_content">Інтерактивні ігри, м'які іграшки, яскраві меблі та багато-багато книг</p></div>
+				</div>
+				<div class="block_content blc3 wow animated fadeInUp">
+					<div class="proz prozimg"><img class="marginsimg" src="img/i7.png"></div>
+					<div class="proz"><h3 class="h3_block_content">Зручне розташування</h3></div>
+					<div class="proz"><p class="p_block_content">Зручне розташування бібліотеки - Центральна частина міста</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="row3_content wow animated slideInRight">
+			<img class="minilogos" src="img/m1.png">
+			<div class="costa">Вивчайте англійську, малювання, історію, досліджуйте океан - БЕЗКОШТОВНО з пристроями віртуальної реальності в БІБЛІОТЕЦІ</div>
+			<img class="minilogos" src="img/vr.png">
+		</div>
+		<div id="programs" class="program">
+			<div class="progtext h3">Програми</div>
+			<div class="programimgs">
+				<img class="wow animated bounceInLeft" src="img/prog1.png">
+				<img class="wow animated bounceInRight" src="img/prog2.png">
+				<img class="wow animated bounceInLeft" src="img/prog3.png">
+				<img class="wow animated bounceInRight" src="img/prog4.png">
+			</div>
+		</div>
+		<div class="row1_content zap2 wow animated slideInLeft">
+			<a href="#form"><div class="p_row1 but2">ЗАПИШІТЬСЯ</div></a>
+			<div class="prop">на найближчий захід у бібліотеку</div>
+		</div>
+		<div id="galery" class="row wow animated zoomIn article">
+			<div class="progtext h3">Галерея</div>
+			<div id="slider">
+				<a href="#galery" class="control_next">></a>
+				<a href="#galery" class="control_prev"><</a>
+				<ul>
+					<li><img src="img/img_four.jpg"></li>
+					<li><img src="img/img_five.jpg"></li>
+					<li><img src="img/img_six.jpg"></li>
+					<li><img src="img/img_seven.jpg"></li>
+					<li><img src="img/img_eight.jpg"></li>
+					<li><img src="img/img_nine.jpg"></li>
+					<li><img src="img/img_ten.jpg"></li>
+					<li><img src="img/img_eleven.jpg"></li>
+				</ul>  
+			</div>
+		</div>
+		<div id="partners" class="row2_content wow animated slideInRight">
+			<div class="h3">Наші партнери</div>
+			<div class="container-tab">
+
+	<ul class="accordion-tabs">
+		<li class="tab-head-cont">
+			<a href="#" class="is-active">AR</a>
+			<section>
+				<img class="partnerimg" src="img/ar.png">
+			</section>
+		</li>
+		<li class="tab-head-cont">
+			<a href="#">LIVE animations</a>
+			<section>
+				<img class="partnerimg" src="img/live.png">
+			</section>
+		</li>
+		<li class="tab-head-cont">
+			<a href="#">Ranok</a>
+			<section>
+				<img class="partnerimg" src="img/ranok.png">    
+			</section>
+		</li>
+	</ul>
+	
+	</div>
+</div>
+<div id="contacts" class="row wow animated slideInRight content">
+	<div class="h3 counter" style="margin-bottom: -10px;">2020</div>
+</div>
+</div>
+	<script type="text/javascript">
+		$(document).ready(function () {
+		$('.accordion-tabs').children('li').first().children('a').addClass('is-active').next().addClass('is-open').show();
+		$('.accordion-tabs').on('click', 'li > a', function(event) {
+			if (!$(this).hasClass('is-active')) {
+				event.preventDefault();
+				$('.accordion-tabs .is-open').removeClass('is-open').hide();
+				$(this).next().toggleClass('is-open').toggle();
+				$('.accordion-tabs').find('.is-active').removeClass('is-active');
+				$(this).addClass('is-active');
+			} else {
+				event.preventDefault();
+			}
+		});
+	});
+		window.onscroll = function() {myFunction()};
+
+function myFunction() {
+  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  var scrolled = (winScroll / height) * 100;
+  document.getElementById("myBar").style.width = scrolled + "%";
+}
+	</script>
+	<script src="js/count.js" type="text/javascript"></script>
+</body>
+</html>
